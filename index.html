@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Página Web Moderna - De 0 a Profesional</title>
@@ -181,7 +182,7 @@ button {
 }</code></pre>
 
                 <h3 class="subsection-title mt-4">2. Sombras (box-shadow)</h3>
-                <p>Da una sensación de "profunidad", como si los elementos flotaran.</p>
+                <p>Da una sensación de "profundidad", como si los elementos flotaran.</p>
                 <pre class="code-block"><code>.tarjeta {
   /* Sombra: (desplaz. X, desplaz. Y, difuminado, color) */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
@@ -219,7 +220,8 @@ button {
 
                 <h4 class="demo-title">Demo de Imagen (desde carpeta /images):</h4>
                 <div class="demo-box" style="padding: 1rem;">
-                    <img src="images/images.jpg" alt="Una imagen de código de desarrollo web." class="responsive-image">
+                    <img src="images/images.jpg" alt="Una imagen de código de desarrollo web."
+                        class="responsive-image">
                 </div>
 
                 <pre class="code-block"><code>&lt;!-- El 'alt' (texto alternativo) es OBLIGATORIO por accesibilidad --&gt;
@@ -234,6 +236,10 @@ button {
   max-width: 100%; /* Asegura que no se salga de la pantalla */
   height: auto;    /* Mantiene la proporción */
   border-radius: 8px; /* ¡Esquinas redondeadas! */
+  
+  /* --- AÑADE ESTO PARA CENTRAR --- */
+  display: block;
+  margin: 0 auto;
 }</code></pre>
 
                 <h3 class="subsection-title mt-6">Cómo poner un Video de YouTube (Responsivo)</h3>
@@ -288,21 +294,18 @@ button {
                                 class="text-link">app.netlify.com/drop</a> (necesitas cuenta gratis).</li>
                         <li><strong>Arrastra tu carpeta "mi-web"</strong> y suéltala en la caja punteada de la página.
                         </li>
-                        <li>¡Listo! Netlify te dará un link público (ej. `mi-pagina-genial.netlify.app`) en menos de 10
-                            segundos.</li>
+                        <li>¡Listo! Netlify te dará un link público.</li>
                     </ol>
                 </div>
 
                 <div class="rule-box mt-4">
                     <p><strong class="text-text-bold">La Opción Estándar (con GitHub): GitHub Pages</strong></p>
-                    <p>Cuando aprendan Git, este es el camino:</p>
                     <ol class="list-decimal list-inside mt-2 space-y-2">
                         <li>Sube tu proyecto a un repositorio de GitHub.</li>
                         <li>Ve a la pestaña "Settings" (Configuración) de tu repositorio.</li>
                         <li>Baja a la sección "Pages" (Páginas).</li>
-                        <li>Elige la rama (branch) "main" (o "master") y haz clic en "Save".</li>
-                        <li>GitHub te dará un link (ej. `tu-usuario.github.io/tu-repositorio`). Tarda 1-2 minutos en
-                            activarse.</li>
+                        <li>Elige la rama (branch) "main" y haz clic en "Save".</li>
+                        <li>GitHub te dará un link. Tarda 1-2 minutos en activarse.</li>
                     </ol>
                 </div>
             </section>
@@ -311,7 +314,7 @@ button {
                 <h2 class="section-title text-accent-blue-light">Recursos para Aprender Más</h2>
                 <p>
                     ¡Felicidades por completar esta guía! El aprendizaje nunca termina. Estos son los mejores sitios
-                    para consultar la documentación oficial y aprender cada etiqueta de HTML y cada propiedad de CSS.
+                    para consultar la documentación oficial.
                 </p>
                 <ul class="list-disc list-inside space-y-2 mt-6">
                     <li class="mt-4">
@@ -328,7 +331,7 @@ button {
                     <li class="mt-6">
                         <strong class="text-text-bold">W3Schools</strong>
                         <p class="text-sm text-text-secondary mt-1 mb-2">
-                            Excelente para principiantes, con muchos ejemplos interactivos para "probar tú mismo".
+                            Excelente para principiantes, con muchos ejemplos interactivos.
                         </p>
                         <a href="https://www.w3schools.com/html/" target="_blank" class="text-link">Tutorial de HTML</a>
                         |
@@ -343,7 +346,7 @@ button {
         </footer>
 
     </div> <script>
-        // 'DOMContentLoaded' es un evento que espera a que todo el HTML
+        // 'DOMContentLoaded': Es un "evento" que espera a que todo el HTML
         // esté cargado y listo (parseado) antes de ejecutar el script.
         // Es una buena práctica para asegurar que todos los elementos (ej. botones) existen.
         document.addEventListener('DOMContentLoaded', () => {

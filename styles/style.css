@@ -496,6 +496,8 @@ html.dark .demo-card-shadow {
   height: auto;
   border-radius: 8px;
   border: 1px solid var(--color-border);
+  display: block;      /* La convierte en un elemento de bloque */
+  margin: 0 auto;    /* Pone márgenes automáticos a izq/der, lo que la centra */
 }
 
 
