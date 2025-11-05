@@ -1,375 +1,541 @@
-/* * BIENVENIDO AL ARCHIVO CSS (style.css)
- *
- * Este archivo controla TODA la apariencia visual de tu página.
- * Es la "pintura" y las "paredes" de la casa.
- *
- * Un comentario en CSS se ve así. ¡Usa muchos!
- */
+/*
+  --- HOJA DE ESTILOS CSS ---
+  Lugar: /styles/style.css
+  
+  Aquí es donde definimos toda la apariencia de la página.
+  Está muy comentado para que entiendas qué hace cada parte.
+*/
 
-/* * 1. DEFINICIÓN DE VARIABLES DE COLOR (CSS Variables)
- *
- * Esto es una BUENA PRÁCTICA.
- * Definimos todos nuestros colores aquí. Si queremos cambiar el color
- * verde, lo cambiamos en UN solo lugar (aquí) y se actualiza
- * en TODA la página.
- */
+/*
+  TEMA 1: VARIABLES Y MODO OSCURO/CLARO
+
+  :root es un selector que apunta a la raíz del documento (la etiqueta <html>).
+  Es el mejor lugar para definir nuestras "Variables CSS" globales.
+  Estas variables nos permiten reutilizar valores (como colores)
+  y cambiarlos fácilmente en un solo lugar.
+*/
 :root {
-    /* * MODO CLARO (se activa cuando <html> tiene la clase '.light')
-     * Estos son los valores por defecto si 'dark' no está.
-     */
-    --color-primary: #ffffff; /* Fondo principal (blanco) */
-    --color-secondary-bg: #f3f4f6; /* Fondo secundario (gris claro) */
-    --color-text: #374151; /* Texto principal (gris oscuro) */
-    --color-text-bold: #111827; /* Texto en negrita (casi negro) */
-    --color-secondary-text: #6b7280; /* Texto secundario (gris) */
-    --color-border: #e5e7eb; /* Bordes (gris claro) */
-    
-    /* Colores de acento (los colores "divertidos") */
-    --color-accent-blue-light: #2563eb; 
-    --color-accent-green-light: #16a34a; 
-    --color-accent-purple-light: #9333ea; 
-    --color-accent-blue-dark: #1e40af; 
-    --color-accent-green-dark: #15803d; 
-    --color-accent-purple-dark: #6b21a8; 
+  /* Valores por defecto (Modo Claro)
+    Estos se usarán si <html> no tiene la clase 'dark'.
+  */
+  --color-primary: #ffffff; /* Fondo principal (blanco) */
+  --color-secondary-bg: #f3f4f6; /* Fondo secundario (gris claro) */
+  --color-text: #1f2937; /* Texto principal (casi negro) */
+  --color-text-secondary: #4b5563; /* Texto secundario (gris oscuro) */
+  --color-text-bold: #111827; /* Texto en negrita */
+  --color-border: #d1d5db; /* Bordes */
+  --color-link: #2563eb; /* Links */
 
-    /* Colores para componentes */
-    --color-link: #1d4ed8;
-    --color-card-shadow: rgba(0, 0, 0, 0.1); /* Sombra suave */
-    --color-demo-bg: #e0f2f7; /* Fondo de las cajas demo */
-    --color-code-bg: #f9fafb; /* Fondo para bloques de código */
-    --color-code-text: #1a202c;
+  /* Colores de acento (los hacemos más oscuros en modo claro) */
+  --color-accent-green-light: #16a34a; /* Verde (para títulos) */
+  --color-accent-green-dark: #15803d;  /* Verde (para bordes) */
+  --color-accent-blue-light: #2563eb;  /* Azul (para títulos) */
+  --color-accent-blue-dark: #1d4ed8;   /* Azul (para botones) */
+  --color-accent-purple-light: #9333ea; /* Morado (para títulos) */
+  --color-accent-purple-dark: #7e22ce;  /* Morado (para bordes) */
+  
+  /* Colores para cajas de tips/reglas */
+  --color-tip-bg: #fffbeb;
+  --color-tip-border: #f59e0b;
+  --color-rule-bg: #eff6ff;
+  --color-rule-border: #3b82f6;
+
+  /* Colores para el gráfico SVG */
+  --svg-rect-bg: #e5e7eb; /* Fondo del rectángulo SVG */
+  --svg-text-title: #111827;
+  --svg-text-label: #374151;
 }
 
-/* * MODO OSCURO (se activa cuando <html> tiene la clase '.dark')
- * Aquí "sobreescribimos" las variables anteriores con colores oscuros.
- */
+/*
+  MODO OSCURO
+  Cuando la etiqueta <html> tiene la clase "dark",
+  simplemente sobrescribimos los valores de nuestras variables.
+  El navegador aplicará los cambios automáticamente. ¡Esa es la magia!
+*/
 html.dark {
-    --color-primary: #1a202c; /* Fondo principal (azul muy oscuro) */
-    --color-secondary-bg: #2d3748; /* Fondo secundario (gris-azul) */
-    --color-text: #e2e8f0; /* Texto principal (gris claro) */
-    --color-text-bold: #ffffff; /* Texto en negrita (blanco) */
-    --color-secondary-text: #a0aec0; /* Texto secundario (gris) */
-    --color-border: #4a5568; /* Bordes (gris oscuro) */
-    
-    /* Colores de acento (versión "neón" / brillante para fondo oscuro) */
-    --color-accent-blue-light: #60a5fa; 
-    --color-accent-green-light: #4ade80; 
-    --color-accent-purple-light: #a78bfa; 
-    --color-accent-blue-dark: #3b82f6; 
-    --color-accent-green-dark: #22c55e; 
-    --color-accent-purple-dark: #8b5cf6; 
+  --color-primary: #111827; /* Fondo principal (azul muy oscuro) */
+  --color-secondary-bg: #1f2937; /* Fondo secundario (azul oscuro) */
+  --color-text: #e5e7eb; /* Texto principal (gris claro) */
+  --color-text-secondary: #9ca3af; /* Texto secundario (gris) */
+  --color-text-bold: #ffffff; /* Texto en negrita (blanco) */
+  --color-border: #374151; /* Bordes (gris oscuro) */
+  --color-link: #60a5fa; /* Links (azul claro) */
 
-    /* Colores para componentes */
-    --color-link: #60a5fa;
-    --color-card-shadow: rgba(0, 0, 0, 0.4); /* Sombra más fuerte */
-    --color-demo-bg: #2d3748; /* Fondo de las cajas demo */
-    --color-code-bg: #1e2530; /* Fondo para bloques de código */
-    --color-code-text: #a0aec0;
+  /* Colores de acento (los hacemos más claros en modo oscuro) */
+  --color-accent-green-light: #4ade80;
+  --color-accent-green-dark: #22c55e;
+  --color-accent-blue-light: #60a5fa;
+  --color-accent-blue-dark: #3b82f6;
+  --color-accent-purple-light: #c084fc;
+  --color-accent-purple-dark: #a855f7;
+
+  /* Cajas de tips/reglas en modo oscuro */
+  --color-tip-bg: #2d3748;
+  --color-tip-border: #f59e0b;
+  --color-rule-bg: #2d3748;
+  --color-rule-border: #60a5fa;
+
+  /* Colores para el gráfico SVG */
+  --svg-rect-bg: #374151; /* Fondo del rectángulo SVG */
+  --svg-text-title: #ffffff;
+  --svg-text-label: #e5e7eb;
 }
 
-/* * 2. ESTILOS BASE (Reset y Tipografía)
- *
- * Aquí definimos cómo se ven las etiquetas HTML más básicas.
- */
+/*
+  TEMA 2: ESTILOS GLOBALES Y TIPOGRAFÍA
+*/
 
-/* Selector 'body': afecta a todo el cuerpo de la página */
 body {
-    font-family: 'Roboto', sans-serif; /* Fuente por defecto */
-    
-    /* Usamos las variables que definimos arriba */
-    background-color: var(--color-primary);
-    color: var(--color-text);
-    
-    /* ¡Magia! Hacemos que el cambio de color de fondo y texto
-       sea suave (dure 0.3 segundos) al cambiar de modo. */
-    transition: background-color 0.3s ease, color 0.3s ease;
-    
-    /* Mejoras visuales de texto */
-    line-height: 1.625; /* Espacio entre líneas (interlineado) */
-    -webkit-font-smoothing: antialiased; /* Suaviza fuentes en Mac */
-    -moz-osx-font-smoothing: grayscale; /* Suaviza fuentes en Firefox */
+  /* Usamos las variables que definimos en :root.
+    Si el modo oscuro está activo, estos valores cambiarán solos.
+  */
+  background-color: var(--color-primary);
+  color: var(--color-text-secondary);
+  
+  /* Definimos la fuente principal para toda la página.
+    'Inter' es la fuente que importamos de Google Fonts.
+    'sans-serif' es la fuente de respaldo si Inter no carga.
+  */
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6; /* Espacio entre líneas (mejora legibilidad) */
+  
+  /* 'transition' en el body hace que el cambio
+    entre modo claro y oscuro sea una animación suave (0.3s)
+    en lugar de un parpadeo brusco.
+  */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  
+  /* 'antialiased' hace que las fuentes se vean más suaves (opcional) */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Selector 'h1, h2, ...': afecta a TODOS los títulos */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif; /* Fuente para títulos */
-    color: var(--color-accent-blue-light);
-    transition: color 0.3s ease; /* Transición suave de color */
+/* Estilos para todos los títulos (h1, h2, h3)
+*/
+h1, h2, h3, h4 {
+  /* Usamos la fuente 'Montserrat' para los títulos */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; /* Negrita */
+  color: var(--color-text-bold);
+  line-height: 1.3;
+  margin-bottom: 1rem; /* Espacio debajo de cada título */
 }
 
-/* Selectores 'p' (párrafo) y 'a' (enlace) */
-p { 
-    margin-bottom: 1rem; /* Espacio debajo de cada párrafo */
-    color: var(--color-secondary-text); 
-    transition: color 0.3s ease; 
-}
-strong { 
-    color: var(--color-text-bold); /* Texto fuerte más oscuro/claro */
-}
-a.text-link { /* Un estilo específico para enlaces en el texto */
-    color: var(--color-link); 
-    text-decoration: none; /* Quitamos el subrayado feo */
-    font-weight: 500;
-    transition: color 0.3s ease; 
-}
-a.text-link:hover { 
-    text-decoration: underline; /* Volvemos a poner el subrayado SOLO al pasar el mouse */
-}
-code { 
-    color: var(--color-accent-purple-light); 
-    font-family: 'Courier New', Courier, monospace;
-    background-color: var(--color-secondary-bg);
-    padding: 2px 5px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+/* Estilos específicos para cada nivel de título */
+h1.main-title {
+  font-size: 2.5rem; /* 40px */
+  color: var(--color-text-bold);
+  text-align: center;
 }
 
-/* * 3. ESTILOS DE LAYOUT (El Contenedor)
- *
- * Controla CÓMO se distribuye el contenido.
- */
-.container { 
-    max-width: 896px; /* Ancho máximo (para que no se vea mal en pantallas 4K) */
-    margin-left: auto;  /* Truco para centrar: 'auto' en los márgenes */
-    margin-right: auto; /* horizontales reparte el espacio sobrante. */
-    
-    padding-left: 1rem;  /* Espacio interno para que el texto no se pegue */
-    padding-right: 1rem; /* a los bordes en celulares. */
-    padding-top: 3rem; 
-    padding-bottom: 3rem; 
-}
-/* Media Query: si la pantalla es de 768px o MÁS ancha... */
-@media (min-width: 768px) { 
-    .container { 
-        padding-top: 5rem; /* ...damos más espacio vertical */
-        padding-bottom: 5rem; 
-    } 
+h2.section-title {
+  font-size: 1.75rem; /* 28px */
+  padding-bottom: 0.5rem; /* Línea decorativa debajo */
+  border-bottom: 2px solid var(--color-border);
+  /* Los colores de los títulos (ej. text-accent-green-light)
+    los ponemos directo en el HTML con clases.
+  */
 }
 
-/* * 4. ESTILOS DE COMPONENTES (Botones, Tarjetas, etc.)
- *
- * Clases reutilizables que usamos en el HTML.
- * (Nota: Muchas clases como 'fixed', 'top-4', 'p-3'
- * son de frameworks como Tailwind, las recreamos aquí)
- */
+h3.subsection-title {
+  font-size: 1.25rem; /* 20px */
+  color: var(--color-text-bold);
+}
 
-/* ---- Clases de utilidad (recreando Tailwind) ---- */
-.fixed { position: fixed; }
-.top-4 { top: 1rem; }
-.right-4 { right: 1rem; }
-.p-3 { padding: 0.75rem; }
-.rounded-full { border-radius: 9999px; }
-.shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
-.z-50 { z-index: 50; } /* Pone el botón por encima de todo */
-.w-6 { width: 1.5rem; }
-.h-6 { height: 1.5rem; }
-.hidden { display: none; } /* Clase clave para ocultar/mostrar iconos */
-.transition-colors { transition-property: background-color, border-color, color, fill, stroke; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 300ms; }
-.duration-300 { transition-duration: 300ms; }
-.text-center { text-align: center; }
-.mb-12 { margin-bottom: 3rem; }
-.mb-4 { margin-bottom: 1rem; }
-.mb-6 { margin-bottom: 1.5rem; }
-.mb-8 { margin-bottom: 2rem; }
-.mb-2 { margin-bottom: 0.5rem; }
-.mb-3 { margin-bottom: 0.75rem; }
+h4.demo-title {
+  font-size: 1.1rem; /* 18px */
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+/* Estilos para párrafos, links y listas */
+p {
+  margin-bottom: 1.25rem; /* Espacio extra debajo de los párrafos */
+}
+
+a.text-link {
+  color: var(--color-link);
+  text-decoration: none; /* Quitamos el subrayado feo */
+  font-weight: 500;
+  border-bottom: 1px solid var(--color-link);
+  transition: all 0.2s ease;
+}
+
+a.text-link:hover {
+  background-color: var(--color-link); /* Al pasar el mouse */
+  color: var(--color-primary);
+  border-bottom-color: transparent;
+}
+
+/* Estilos para listas */
+ul, ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem; /* Espacio para los puntos/números */
+}
+li {
+  margin-bottom: 0.5rem;
+}
+
+
+/*
+  TEMA 3: LAYOUT (CONTENEDOR)
+  Aquí definimos la estructura de la página.
+*/
+
+.container {
+  max-width: 56rem; /* 896px. Un ancho máximo cómodo para leer */
+  margin-left: auto;  /* 'auto' a izq. y der. centra el bloque */
+  margin-right: auto;
+  padding: 2rem 1rem; /* 32px de espacio arriba/abajo, 16px a los lados */
+}
+
+/*
+  MEDIA QUERY (Diseño Responsivo)
+  Si la pantalla es más ancha que 768px (tablets/PCs)...
+*/
+@media (min-width: 768px) {
+  .container {
+    padding: 4rem 1.5rem; /* Aumentamos el padding en pantallas grandes */
+  }
+  h1.main-title {
+    font-size: 3rem; /* Título más grande en PC */
+  }
+}
+
+/*
+  TEMA 4: COMPONENTES (Botones, Tarjetas, Código, etc.)
+*/
+
+/* --- Botón de Modo Claro/Oscuro --- */
+.theme-toggle-button {
+  position: fixed; /* Se queda fijo en la pantalla */
+  top: 1rem; /* 16px desde arriba */
+  right: 1rem; /* 16px desde la derecha */
+  z-index: 50; /* Se asegura de estar por encima de todo */
+  
+  background-color: var(--color-secondary-bg);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: 9999px; /* Un círculo perfecto */
+  padding: 0.75rem; /* 12px */
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.theme-toggle-button:hover {
+  transform: scale(1.1); /* Agranda el botón al pasar el mouse */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle-button .w-6 { width: 1.5rem; } /* 24px */
+.theme-toggle-button .h-6 { height: 1.5rem; } /* 24px */
+.theme-toggle-button .hidden { display: none; } /* Clase para ocultar iconos */
+
+
+/* --- Header y Footer (Semánticos) --- */
+.main-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.subtitle {
+  font-size: 1.125rem; /* 18px */
+  color: var(--color-text-secondary);
+  max-w: 42rem; /* 672px */
+  margin: 1rem auto 0 auto;
+}
+.main-footer {
+  text-align: center;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  font-size: 0.875rem; /* 14px */
+}
+.main-footer p {
+  margin-bottom: 0.25rem;
+}
+
+
+/* --- Secciones de Contenido --- */
+.content-wrapper {
+  /* Crea un espacio de 3rem (48px) entre cada <section> */
+  display: flex;
+  flex-direction: column;
+  gap: 3rem; 
+}
+.content-section {
+  background-color: var(--color-secondary-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+@media (min-width: 768px) {
+  .content-section {
+    padding: 2rem; /* Más padding en PC */
+  }
+}
+/* Al pasar el mouse sobre una sección */
+html.dark .content-section:hover {
+  border-color: var(--color-accent-blue-dark);
+}
+html.light .content-section:hover {
+  border-color: var(--color-accent-blue-light);
+}
+
+
+/* --- Bloques de Código (pre, code) --- */
+code {
+  /* Estilo para <code> en línea */
+  background-color: var(--color-border);
+  color: var(--color-text-bold);
+  padding: 0.2em 0.4em;
+  margin: 0 0.2em;
+  font-size: 0.9em;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+pre {
+  /* Estilo para bloques de código <pre> */
+  background-color: var(--color-primary); /* Un fondo diferente */
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto; /* Permite scroll horizontal si el código es largo */
+  margin: 1rem 0;
+}
+pre code {
+  /* Reseteamos el estilo del <code> dentro de <pre> */
+  background-color: transparent;
+  color: inherit; /* Hereda el color del padre (<pre>) */
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* --- Cajas de Comparación (Mal vs Bien) --- */
+.code-comparison {
+  display: flex;
+  flex-direction: column; /* Apilados en móvil */
+  gap: 1rem;
+  margin: 1rem 0;
+}
+@media (min-width: 768px) {
+  .code-comparison {
+    flex-direction: row; /* Lado a lado en PC */
+  }
+}
+.code-example-bad, .code-example-good {
+  flex: 1; /* Ocupan el mismo espacio */
+  border-radius: 8px;
+  padding: 1rem;
+}
+.code-label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+/* Colores para Mal (rojo) */
+.code-example-bad {
+  background-color: #fef2f2;
+  border: 1px solid #fca5a5;
+  color: #b91c1c;
+}
+.code-example-bad .code-label { color: #dc2626; }
+html.dark .code-example-bad {
+  background-color: #3f2222;
+  border-color: #7f1d1d;
+  color: #fca5a5;
+}
+html.dark .code-example-bad .code-label { color: #f87171; }
+
+/* Colores para Bien (verde) */
+.code-example-good {
+  background-color: #f0fdf4;
+  border: 1px solid #86efac;
+  color: #15803d;
+}
+.code-example-good .code-label { color: #16a34a; }
+html.dark .code-example-good {
+  background-color: #223a2d;
+  border-color: #22c55e;
+  color: #bbf7d0;
+}
+html.dark .code-example-good .code-label { color: #4ade80; }
+
+
+/* --- Cajas de Tip y Regla (Bono) --- */
+.tip-box, .rule-box {
+  padding: 1rem;
+  border-radius: 8px;
+  border-left-width: 4px;
+  margin: 1rem 0;
+}
+.tip-box {
+  background-color: var(--color-tip-bg);
+  border-color: var(--color-tip-border);
+}
+.rule-box {
+  background-color: var(--color-rule-bg);
+  border-color: var(--color-rule-border);
+}
+
+
+/* --- Demos Interactivas --- */
+.demo-box {
+  background-color: var(--color-primary);
+  border: 2px dashed var(--color-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+/* Esta es la clase del TEMA 3: FLEXBOX */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 150px;
+}
+.demo-item-flex {
+  background-color: var(--color-accent-purple-dark);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Demo de Botón y Tarjeta (:hover y box-shadow) */
+.demo-card-shadow {
+  background-color: var(--color-secondary-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 2rem;
+  /* La sombra (box-shadow) */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+html.dark .demo-card-shadow {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.demo-button {
+  background-color: var(--color-accent-blue-dark);
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* La transición suave */
+  transition: all 0.3s ease;
+}
+
+.demo-button:hover {
+  background-color: var(--color-accent-blue-light);
+  /* Levantamos el botón y aumentamos la sombra */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+/* --- TEMA 5: SVG HERO Y VIDEO YOUTUBE --- */
+
+/* Contenedor del SVG de la cabecera */
+.hero-svg-container {
+  width: 100%;
+  max-width: 400px; /* Ancho máximo del SVG */
+  margin: 0 auto 2rem auto; /* Centrado y con espacio abajo */
+}
+.hero-svg-container svg {
+  width: 100%; /* Hace el SVG responsivo */
+  height: auto;
+}
+
+/* Estilos para los elementos DENTRO del SVG
+  Usamos las variables CSS para que cambien de color con el tema.
+*/
+.svg-rect-bg {
+  fill: var(--svg-rect-bg);
+  transition: fill 0.3s ease;
+}
+.svg-accent-green {
+  fill: var(--color-accent-green-dark);
+  transition: fill 0.3s ease;
+}
+.svg-accent-blue {
+  fill: var(--color-accent-blue-dark);
+  transition: fill 0.3s ease;
+}
+.svg-accent-purple {
+  fill: var(--color-accent-purple-dark);
+  transition: fill 0.3s ease;
+}
+.svg-text-title {
+  fill: var(--svg-text-title);
+  font-family: 'Montserrat', sans-serif;
+  transition: fill 0.3s ease;
+}
+.svg-text-label {
+  fill: var(--svg-text-label);
+  font-family: 'Inter', sans-serif;
+  transition: fill 0.3s ease;
+}
+
+
+/* --- Demo de Imagen --- */
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+}
+
+
+/* Contenedor para Video Responsivo (El truco de YouTube)
+  Esto mantiene la proporción 16:9 del video.
+*/
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* Esto es 9 (alto) / 16 (ancho) = 0.5625 */
+  overflow: hidden;
+  border-radius: 8px;
+  margin-top: 1rem;
+  border: 1px solid var(--color-border);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Clases de utilidad (colores de texto)
+  Las usamos en el HTML para dar color a los títulos de sección.
+*/
+.text-accent-green-light { color: var(--color-accent-green-light); }
+.text-accent-blue-light { color: var(--color-accent-blue-light); }
+.text-accent-purple-light { color: var(--color-accent-purple-light); }
+.text-text-bold { color: var(--color-text-bold); }
+
+/* Clases de utilidad (márgenes) */
 .mt-4 { margin-top: 1rem; }
 .mt-6 { margin-top: 1.5rem; }
-.pb-2 { padding-bottom: 0.5rem; }
-.space-y-16 > :not([hidden]) ~ :not([hidden]) { margin-top: 4rem; }
+
+/* Clases de utilidad (listas y texto) */
 .list-disc { list-style-type: disc; }
+.list-decimal { list-style-type: decimal; }
 .list-inside { list-style-position: inside; }
-.space-y-1 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.25rem; }
-.italic { font-style: italic; }
-.font-semibold { font-weight: 600; }
-.font-bold { font-weight: 700; }
-.text-red-400 { color: #f87171; }
-.text-red-300 { color: #fca5a5; }
-.text-green-400 { color: #4ade80; }
-.text-green-300 { color: #86efac; }
-.not-italic { font-style: normal; }
-
-/* ---- Clases de Flexbox (de la demo) ---- */
-.flex { display: flex; }
-.flex-col { flex-direction: column; }
-.justify-center { justify-content: center; }
-.items-center { align-items: center; }
-.h-48 { height: 12rem; }
-.p-6 { padding: 1.5rem; }
-.rounded-lg { border-radius: 0.5rem; }
-.text-lg { font-size: 1.125rem; }
+.space-y-2 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.5rem; }
 .text-sm { font-size: 0.875rem; }
-.border-2 { border-width: 2px; }
-
-/* ---- Componentes personalizados ---- */
-
-/* Botón de cambio de tema */
-#theme-toggle {
-    background-color: var(--color-secondary-bg);
-    color: var(--color-accent-green-light);
-    border: none;
-    cursor: pointer;
-}
-
-/* Imagen Hero */
-.hero-image-container {
-    margin: 2.5rem 0;
-    text-align: center;
-}
-.hero-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 0.5rem; /* 8px */
-    border: 2px solid var(--color-border);
-    box-shadow: 0 4px 10px var(--color-card-shadow);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Títulos de Sección (para Temas 1-5) */
-.section-title {
-    font-size: 1.875rem; /* 30px */
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom-width: 2px;
-    /* Los colores se asignan en el HTML (ej. text-accent-green-light) */
-    transition: color 0.3s ease, border-color 0.3s ease;
-}
-/* Clases para los colores de borde y texto de los títulos */
-.text-accent-green-light { color: var(--color-accent-green-light); }
-.border-accent-green-dark { border-color: var(--color-accent-green-dark); }
-.text-accent-blue-light { color: var(--color-accent-blue-light); }
-.border-accent-blue-dark { border-color: var(--color-accent-blue-dark); }
-.text-accent-purple-light { color: var(--color-accent-purple-light); }
-.border-accent-purple-dark { border-color: var(--color-accent-purple-dark); }
-
-
-.section-subtitle {
-    font-size: 1.125rem; /* 18px */
-    color: var(--color-secondary-text);
-    margin-bottom: 2rem;
-}
-.article-title {
-    font-size: 1.5rem; /* 24px */
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: var(--color-accent-blue-light);
-}
-
-/* Bloques de Código de ejemplo */
-.code-example-bad {
-    padding: 1rem;
-    background-color: rgba(239, 68, 68, 0.1); /* Fondo rojo transparente */
-    border: 1px solid rgba(239, 68, 68, 0.3);
-    border-radius: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-.code-example-good {
-    padding: 1rem;
-    background-color: rgba(34, 197, 94, 0.1); /* Fondo verde transparente */
-    border: 1px solid rgba(34, 197, 94, 0.3);
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-/* Bloques de código <pre> (más oscuros) */
-pre.code-block {
-    background-color: var(--color-code-bg); /* Un fondo más oscuro/claro que el base */
-    color: var(--color-code-text);
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    overflow-x: auto; /* Permite scroll horizontal si el código es muy largo */
-    font-family: 'Courier New', Courier, monospace;
-    margin: 1rem 0;
-    border: 1px solid var(--color-border);
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-/* Estilo específico para el texto plano (árbol de carpetas) */
-pre.language-text code {
-    color: var(--color-secondary-text);
-    background-color: transparent;
-    padding: 0;
-}
-/* Estilo específico para código HTML */
-pre.language-html code {
-    color: var(--color-secondary-text);
-    background-color: transparent;
-    padding: 0;
-}
-
-
-/* Cajas de Demo */
-.demo-box {
-    margin: 1.5rem 0;
-    padding: 1.5rem;
-    border: 2px dashed var(--color-border);
-    border-radius: 0.5rem;
-    background-color: var(--color-secondary-bg);
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-.bg-demo-bg { background-color: var(--color-demo-bg); }
-.border-accent-green-dark { border-color: var(--color-accent-green-dark); }
-.text-text-bold { color: var(--color-text-bold); }
-.bg-accent-green-dark { background-color: var(--color-accent-green-dark); }
-
-/* Botón de Acción (Demo) */
-.action-button {
-    background-color: var(--color-accent-blue-dark);
-    color: var(--color-text-bold);
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    
-    /* ¡AQUÍ LA TRANSICIÓN! */
-    /* Se aplica a 'all' (todo) y dura 0.3s con curva 'ease' */
-    transition: all 0.3s ease; 
-    
-    cursor: pointer;
-    border: none;
-    display: inline-block;
-}
-.action-button:hover {
-    background-color: var(--color-accent-blue-light);
-    
-    /* ¡AQUÍ EL :hover! */
-    /* La sombra se hace más grande y el botón se "levanta" */
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    transform: translateY(-2px); /* Mueve el botón 2px hacia arriba */
-}
-
-/* Tarjeta (Demo) */
-.card-demo {
-    padding: 1.5rem;
-    background-color: var(--color-secondary-bg);
-    border-radius: 0.5rem;
-    
-    /* ¡AQUÍ LA SOMBRA! */
-    /* X=0, Y=4px, Blur=10px, Color=variable de sombra */
-    box-shadow: 0px 4px 10px var(--color-card-shadow); 
-    
-    max-width: 20rem;
-    text-align: left;
-    border: 1px solid var(--color-border);
-    transition: all 0.3s ease;
-}
-.card-demo:hover {
-    /* Efecto extra: la sombra crece al pasar el mouse */
-    box-shadow: 0px 8px 20px var(--color-card-shadow);
-    transform: translateY(-2px);
-}
-
-/* Pie de Página (Footer) */
-.site-footer {
-    text-align: center;
-    color: var(--color-secondary-text);
-    font-size: 0.875rem; /* 14px */
-    margin-top: 5rem;
-    border-top: 1px solid var(--color-border);
-    padding-top: 2rem;
-    transition: border-color 0.3s ease;
-}
-.site-footer p {
-    margin-bottom: 0.5rem;
-    color: var(--color-secondary-text);
-}
+.mb-2 { margin-bottom: 0.5rem; }

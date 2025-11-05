@@ -94,7 +94,7 @@ Si quieres explorar los archivos:
 
 1. **Clona o descarga** este repositorio.
 
-   * `git clone https://github.com/tu-usuario/tu-repositorio.git`
+   * `git clone https://github.com/TamaraPiccinni/PaginaWeb.git`
 
    * O descarga el archivo ZIP.
 

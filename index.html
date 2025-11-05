@@ -1,160 +1,108 @@
-<!--
- * BIENVENIDO AL ARCHIVO HTML (index.html)
- *
- * Este archivo es el "esqueleto" de tu página web. 
- * Contiene TODA la información y la estructura (el contenido).
- *
- * ¿Ves esto? Es un comentario en HTML. 
- * Los comentarios son vitales para explicar qué hace cada parte.
- * El navegador los ignora, son solo para los humanos.
--->
 <!DOCTYPE html>
-<!-- 
- * La etiqueta <html> es la raíz de todo.
- * El atributo 'lang="es"' le dice al navegador que el contenido está en Español.
- * La clase 'dark' activa el Modo Oscuro por defecto.
--->
 <html lang="es" class="dark">
 
-<!-- 
- * El <head> (cabeza) contiene "metadatos" e información *sobre* la página.
- * NADA de lo que hay aquí es visible en la página, excepto el <title>.
--->
 <head>
-    <!-- Define la codificación de caracteres. UTF-8 es el estándar universal. -->
     <meta charset="UTF-8">
-
-    <!-- Configura la vista para dispositivos móviles (¡CRUCIAL para Responsive Design!) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- El título que aparece en la pestaña del navegador -->
-    <title>Cómo hacer una Página Web "Mejor" y "Más Linda"</title>
-    
-    <!-- 
-     * ¡LA CONEXIÓN MÁGICA!
-     * Esta línea carga nuestro archivo de estilos CSS.
-     * Así separamos la structure (HTML) de la presentación (CSS).
-     *
-     * NOTA: Si sigues la guía del "Tema 5" y mueves tu CSS a una
-     * carpeta 'styles', deberás cambiar esto a:
-     * <link rel="stylesheet" href="styles/style.css">
-    -->
-    <link rel="stylesheet" href="./styles/style.css">
-    
-    <!-- Fuentes de Google Fonts (para tipografía bonita) -->
+    <title>Página Web Moderna - De 0 a Profesional</title>
+
+    <link rel="stylesheet" href="styles/style.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@700&display=swap"
+        rel="stylesheet">
 </head>
 
-<!-- 
- * El <body> (cuerpo) contiene TODO el contenido VISIBLE de tu página:
- * texto, imágenes, botones, etc.
--->
-<body class="bg-primary text-text antialiased leading-relaxed font-roboto transition-colors duration-300">
+<body class="bg-primary text-text font-inter antialiased transition-colors duration-300">
 
-    <!-- 
-     * INICIO: BOTÓN DE TEMA (MODO CLARO/OSCURO)
-     * Este botón usará JavaScript (al final del <body>) para cambiar
-     * la clase 'dark' o 'light' en la etiqueta <html>.
-    -->
-    <button id="theme-toggle" class="fixed top-4 right-4 p-3 rounded-full bg-secondary-bg text-accent-green-light shadow-lg focus:outline-none focus:ring-2 focus:ring-accent-green-light z-50 transition-colors duration-300">
-        <!-- Icono de Luna (Visible en Modo Oscuro) -->
-        <svg id="moon-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+    <button id="theme-toggle" class="theme-toggle-button" aria-label="Cambiar tema">
+        <svg id="moon-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
         </svg>
-        <!-- Icono de Sol (Oculto por defecto, visible en Modo Claro) -->
-        <svg id="sun-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h1M2 12h1m15.364 6.364l-.707.707M6.343 6.343l-.707-.707m12.728 0l-.707-.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+        <svg id="sun-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h1M2 12h1m15.364 6.364l-.707.707M6.343 6.343l-.707-.707m12.728 0l-.707-.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+            </path>
         </svg>
     </button>
-    <!-- FIN: BOTÓN DE TEMA -->
 
-    
-    <!-- 
-     * INICIO: CONTENEDOR PRINCIPAL
-     * Usamos un <div> principal para centrar todo el contenido
-     * y darle un ancho máximo, para que no se estire
-     * indefinidamente en pantallas gigantes.
-    -->
-    <div class="container mx-auto max-w-4xl px-4 py-12 md:py-20">
+    <div class="container">
 
-        <!-- 
-         * INICIO: ENCABEZADO (<header>)
-         * <header> es una etiqueta SEMÁNTICA. Le dice al navegador
-         * que esto es el cabezal o título principal de la página.
-        -->
-        <header class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-montserrat font-bold text-accent-blue-light mb-4">
+        <header class="main-header">
+
+            <div class="hero-svg-container">
+                <svg viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg">
+                    <rect class="svg-rect-bg" x="10" y="10" width="380" height="130" rx="15" />
+                    <path class="svg-accent-green" d="M 60 40 L 100 110 L 140 40 Z" />
+                    <circle class="svg-accent-blue" cx="200" cy="75" r="40" />
+                    <rect class="svg-accent-purple" x="270" y="35" width="80" height="80" rx="10" />
+                    <text x="200" y="82" class="svg-text-title" text-anchor="middle" font-size="24"
+                        font-weight="bold">SVG</text>
+                    <text x="100" y="80" class="svg-text-label" text-anchor="middle" font-size="14">Ligero</text>
+                    <text x="310" y="80" class="svg-text-label" text-anchor="middle" font-size="14">Escalable</text>
+                </svg>
+            </div>
+
+            <h1 class="main-title">
                 Cómo hacer una Página Web "Mejor" y "Más Linda"
             </h1>
-            <p class="text-lg text-secondary-text max-w-2xl mx-auto">
-                Una página "funcional" (HTML) es como los cimientos. El CSS es lo que le da la estructura (paredes) y el estilo (pintura). Aquí te explicamos cómo hacerlo bien.
+            <p class="subtitle">
+                Una guía paso a paso para dejar atrás las malas prácticas y construir sitios web modernos y
+                profesionales.
             </p>
         </header>
-        <!-- FIN: ENCABEZADO -->
 
-        <!-- 
-         * INICIO: IMAGEN AMIGABLE (Hero Image)
-         * Usamos un placeholder de 896x300. 
-         * El 'alt' (texto alternativo) es VITAL para la accesibilidad.
-        -->
-        <div class="hero-image-container">
-            <img src="https://placehold.co/896x300/2d3748/4ade80?text=Aqu%C3%AD+va+una+Imagen+Amigable" 
-                 alt="Diagrama explicativo de desarrollo web con HTML y CSS" 
-                 class="hero-image"
-                 onerror="this.src='https://placehold.co/896x300/1a202c/e2e8f0?text=Error+al+cargar+imagen'; this.onerror=null;"
-            >
-        </div>
-        <!-- FIN: IMAGEN AMIGABLE -->
+        <main class="content-wrapper">
 
-        <!-- 
-         * INICIO: CONTENIDO PRINCIPAL (<main>)
-         * <main> es otra etiqueta SEMÁNTICA. Envuelve el
-         * contenido principal y único de esta página.
-        -->
-        <main class="space-y-16">
-
-            <!-- TEMA 1: ESTRUCTURA SEMÁNTICA -->
-            <section>
-                <h2 class="section-title text-accent-green-light border-accent-green-dark">
-                    Tema 1: La Estructura (HTML Semántico)
-                </h2>
-                <p class="section-subtitle">
-                    "Mejor" significa que la página es robusta, fácil de mantener y accesible para todos. Esto se logra antes de pensar en los colores.
+            <section class="content-section">
+                <h2 class="section-title text-accent-green-light">Tema 1: La Estructura Invisible (HTML Semántico)</h2>
+                <p>
+                    "Mejor" significa que la página es robusta, fácil de mantener y accesible. Esto se logra antes de
+                    pensar en los colores.
+                    Ya no usamos <code>&lt;div&gt;</code> para todo.
                 </p>
-                <article class="mb-8">
-                    <h3 class="article-title">1.1 ¡Usa HTML Semántico, en serio!</h3>
-                    <p class="mb-4">No uses <code>&lt;div&gt;</code> para todo. Dale un mapa a Google (SEO) y a los lectores de pantalla (Accesibilidad).</p>
+
+                <div class="code-comparison">
                     <div class="code-example-bad">
-                        <span class="font-bold text-red-400">Mal:</span>
-                        <code class="text-red-300 block">&lt;div&gt; (Título), &lt;div&gt; (Menú), &lt;div&gt; (Contenido)</code>
+                        <span class="code-label">Mal (Antiguo):</span>
+                        <code class="block">&lt;div id="header"&gt;...&lt;/div&gt;</code>
+                        <code class="block">&lt;div id="content"&gt;...&lt;/div&gt;</code>
+                        <code class="block">&lt;div id="footer"&gt;...&lt;/div&gt;</code>
                     </div>
                     <div class="code-example-good">
-                        <span class="font-bold text-green-400">Bien:</span>
-                        <code class="text-green-300 block">&lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;section&gt;, &lt;footer&gt;</code>
+                        <span class="code-label">Bien (Moderno):</span>
+                        <code class="block">&lt;header&gt;...&lt;/header&gt;</code>
+                        <code class="block">&lt;main&gt;...&lt;/main&gt;</code>
+                        <code class="block">&lt;footer&gt;...&lt;/footer&gt;</code>
                     </div>
-                </article>
-            </section>
-            
-            <!-- TEMA 2: RESPONSIVE DESIGN -->
-            <section>
-                <h2 class="section-title text-accent-blue-light border-accent-blue-dark">
-                    Tema 2: Adaptación (Responsive Design)
-                </h2>
-                <p class="section-subtitle">
-                    Hoy, más gente navega en el celular que en la PC. Si tu página se "rompe" en un celular, no está bien hecha.
+                </div>
+                <p class="mt-4">
+                    <strong>¿Por qué?</strong> Le das un "mapa" a Google (mejora el SEO) y a los lectores de pantalla
+                    (mejora la accesibilidad).
                 </p>
-                <article class="mb-8">
-                    <h3 class="article-title">2.1 El Meta Viewport</h3>
-                    <p>Agrega esto SIEMPRE en tu <code>&lt;head&gt;</code>. Le dice al celular "no hagas zoom, usa el ancho real del dispositivo".</p>
-                    <pre class="code-block language-html"><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
-                </article>
-                <article>
-                    <h3 class="article-title">2.2 Media Queries</h3>
-                    <p>En tu CSS, puedes cambiar estilos según el tamaño de la pantalla:</p>
-                    <pre class="code-block language-css"><code>/* Estilos para PC (default) */
-.contenedor { width: 800px; }
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title text-accent-blue-light">Tema 2: Diseño Responsivo (¡Se ve bien en celulares!)
+                </h2>
+                <p>
+                    Hoy, la mayoría de usuarios navega en el celular. Si tu página se "rompe" en un celular, no está
+                    bien hecha.
+                </p>
+                <p>Agrega <strong>siempre</strong> esta línea en tu <code>&lt;head&gt;</code>:</p>
+                <pre
+                    class="code-block"><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+
+                <p>Luego, en tu CSS, usas "Media Queries" para cambiar estilos según el tamaño de la pantalla:</p>
+                <pre class="code-block"><code>/* Estilos para PC (ej. 800px de ancho) */
+.contenedor {
+  width: 800px;
+}
 
 /* Cuando la pantalla sea de 600px o menos (celulares) */
 @media (max-width: 600px) {
@@ -162,238 +110,288 @@
     width: 100%; /* Ocupa toda la pantalla */
   }
 }</code></pre>
-                </article>
-            </section>
-            
-            <!-- TEMA 3: ALINEACIÓN MODERNA -->
-            <section>
-                <h2 class="section-title text-accent-green-light border-accent-green-dark">
-                    Tema 3: Alineación (¡Flexbox!)
-                </h2>
-                <p class="section-subtitle">
-                    ¿Cansado de que las cosas no queden donde quieres? Dejamos atrás los <code>float</code>. Flexbox es la herramienta moderna.
-                </p>
-                <article>
-                    <h3 class="article-title">3.1 El truco MÁGICO para centrar</h3>
-                    <p>¿Quieres centrar algo perfectamente en medio de un contenedor? Fácil:</p>
-                    <pre class="code-block language-css"><code>.contenedor-padre {
-  display: flex;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center;    /* Centra verticalmente */
-  height: 100vh; /* Ocupa toda la altura de la pantalla */
-}</code></pre>
-                    <div class="demo-box flex-center">
-                        <h4 class="font-montserrat font-semibold mb-2 text-accent-green-light">Demo de Flexbox:</h4>
-                        <div class="flex flex-col justify-center items-center h-48 bg-demo-bg rounded-lg border-2 border-accent-green-dark">
-                            <div class="p-6 bg-accent-green-dark text-text-bold rounded-lg shadow-lg font-bold">
-                                ¡Centrado!
-                            </div>
-                        </div>
-                    </div>
-                </article>
             </section>
 
-            <!-- TEMA 4: ESTÉTICA (FUENTES, COLOR, ESPACIO) -->
-            <section>
-                <h2 class="section-title text-accent-purple-light border-accent-purple-dark">
-                    Tema 4: La Estética ("Más Linda")
-                </h2>
-                <p class="section-subtitle italic text-center font-semibold">
-                    El secreto N°1 es: <span class="text-accent-purple-light not-italic">Menos es Más.</span>
+            <section class="content-section">
+                <h2 class="section-title text-accent-purple-light">Tema 3: ¡Alinear con Flexbox! (El truco MÁGICO)</h2>
+                <p>
+                    ¿Cansado de que las cosas no queden donde quieres? Flexbox es la herramienta moderna.
+                    ¿Quieres centrar algo perfectamente?
                 </p>
-                <article class="mb-8">
-                    <h3 class="article-title">4.1 Tipografía (Fuentes)</h3>
-                    <p>No uses "Times New Roman". Usa Google Fonts (gratis). No uses más de 2 fuentes distintas (una para títulos, otra para texto).</p>
-                    <pre class="code-block language-css"><code>body {
-  font-family: 'Roboto', sans-serif; /* Fuente para párrafos */
-}
-h1, h2 {
-  font-family: 'Montserrat', sans-serif; /* Fuente para títulos */
+                <pre class="code-block"><code>.contenedor-padre {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;     /* Centra verticalmente */
+  min-height: 200px;       /* (Le damos algo de altura) */
 }</code></pre>
-                </article>
-                <article class="mb-8">
-                    <h3 class="article-title">4.2 Paleta de Colores</h3>
-                    <p>No elijas colores al azar. Define una paleta (usa <a href="https://coolors.co/" target="_blank" class="text-link hover:underline">Coolors</a>). Elige un color principal, uno secundario y uno de fondo.</p>
-                </article>
-                <article>
-                    <h3 class="article-title">4.3 Espaciado (Padding y Margin)</h3>
-                    <p>¡Dale aire a tus elementos! No dejes que el texto toque los bordes.</p>
-                    <ul class="list-disc list-inside mb-4 space-y-1">
-                        <li><strong>Padding:</strong> Es el "relleno" <em>dentro</em> de un elemento.</li>
-                        <li><strong>Margin:</strong> Es el "espacio" <em>fuera</em> de un elemento (para separarlo de otros).</li>
-                    </ul>
-                </article>
+
+                <h4 class="demo-title">Demo de Flexbox:</h4>
+                <div class="demo-box flex-center">
+                    <div class="demo-item-flex">
+                        ¡Centrado!
+                    </div>
+                </div>
             </section>
-            
-            <!-- BONO EXTRA: LA MAGIA DE CSS -->
-            <section>
-                <h2 class="section-title text-accent-green-light border-accent-green-dark">
-                    Bono Extra: La "Magia" de CSS
-                </h2>
-                <p class="section-subtitle">
-                    Estos 3 efectos son fáciles y hacen que tu página se sienta profesional al instante.
+
+            <section class="content-section">
+                <h2 class="section-title text-accent-green-light">Tema 4: Estética "Linda" y CSS Moderno</h2>
+                <p>
+                    El secreto N°1 es: <strong>Menos es Más</strong>. No uses 10 colores. Define una paleta.
+                    Usamos <strong>Variables CSS</strong> (Custom Properties) para definir nuestros colores en un solo
+                    lugar.
                 </p>
-                <article>
-                    <h3 class="article-title">Efecto :hover (Reacción al mouse)</h3>
-                    <p class="mb-4">El usuario debe saber que puede hacer clic. <code>:hover</code> se activa cuando el mouse pasa por encima.</p>
-                    
-                    <h3 class="article-title mt-6">Transiciones (Suavidad)</h3>
-                    <p class="mb-4">El <code>:hover</code> es brusco. Con <code>transition</code>, hacemos que el cambio de color sea suave (ej: 0.3 segundos).</p>
-                    
-                    <div class="demo-box flex-center">
-                        <h4 class="font-montserrat font-semibold mb-3 text-accent-green-light">Demo de :hover y transition:</h4>
-                        <!-- Este botón usa la clase .action-button de style.css -->
-                        <button class="action-button">
+                <pre class="code-block"><code>/* Define los colores en :root (la raíz del documento) */
+:root {
+  --color-texto: #333;
+  --color-fondo: #FFF;
+  --color-acento: #007bff;
+}
+
+/* Luego, úsalos donde quieras */
+body {
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+}
+button {
+  background-color: var(--color-acento);
+}</code></pre>
+                <p>
+                    ¡Así es como funciona el botón de modo claro/oscuro! Simplemente cambia los valores de estas
+                    variables.
+                </p>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title text-accent-blue-light">Bono Extra 1: La "Magia" de CSS</h2>
+                <p>Estos efectos son fáciles y hacen que tu página se sienta profesional al instante.</p>
+
+                <h3 class="subsection-title">1. Efecto :hover (Reacción al mouse)</h3>
+                <p>El usuario debe saber que puede hacer clic. El <code>transition</code> hace que el cambio sea suave.
+                </p>
+                <pre class="code-block"><code>.boton {
+  background-color: var(--color-accent-blue-dark);
+  /* 'transition' anima el cambio de propiedades (ej. color) */
+  transition: all 0.3s ease;
+}
+
+/* ':hover' se activa cuando el mouse está encima */
+.boton:hover {
+  background-color: var(--color-accent-blue-light);
+  transform: translateY(-2px); /* Moverlo 2px hacia arriba */
+}</code></pre>
+
+                <h3 class="subsection-title mt-4">2. Sombras (box-shadow)</h3>
+                <p>Da una sensación de "profunidad", como si los elementos flotaran.</p>
+                <pre class="code-block"><code>.tarjeta {
+  /* Sombra: (desplaz. X, desplaz. Y, difuminado, color) */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+}</code></pre>
+
+                <h4 class="demo-title">Demo de :hover y box-shadow:</h4>
+                <div class="demo-box flex-center">
+                    <div class="demo-card-shadow">
+                        <button class="demo-button">
                             Pasa el mouse sobre mí
                         </button>
                     </div>
-
-                    <h3 class="article-title mt-6">Sombras (Box-shadow)</h3>
-                    <p class="mb-4">Da una sensación de "profundidad", como si los elementos estuvieran flotando.</p>
-
-                    <div class="demo-box flex-center">
-                        <!-- Esta tarjeta usa la clase .card-demo de style.css -->
-                        <div class="card-demo">
-                            <h4 class="font-montserrat font-bold text-lg mb-2">Tarjeta con Sombra</h4>
-                            <p class="text-sm text-secondary-text">Esta tarjeta tiene <code>box-shadow</code>.</p>
-                        </div>
-                    </div>
-                </article>
+                </div>
             </section>
-            
-            <!-- 
-             * INICIO: TEMA 5 (GUÍA DE PROYECTO Y DEPLOY)
-             * Este es el contenido de la guía que pediste,
-             * ahora integrado directamente en la página.
-            -->
-            <section>
-                <h2 class="section-title text-accent-purple-light border-accent-purple-dark">
-                    Tema 5: Siguientes Pasos (Estructura y Deploy)
-                </h2>
-                <p class="section-subtitle">
-                    ¡Felicidades! Ya sabes crear una página. Ahora, veamos cómo organizarla y publicarla en Internet gratis.
+
+            <section class="content-section">
+                <h2 class="section-title text-accent-purple-light">Bono Extra 2: Imágenes (SVG vs JPG) y Videos</h2>
+
+                <h3 class="subsection-title">SVG (Gráfico Vectorial) vs JPG/PNG</h3>
+                <p>
+                    Para logos, iconos y gráficos simples (como el de arriba), **SVG es casi siempre mejor**.
                 </p>
-                
-                <!-- Artículo 5.1: Estructura de Carpetas -->
-                <article class="mb-8">
-                    <h3 class="article-title">5.1 Estructura de Carpetas Estándar</h3>
-                    <p class="mb-4">No es buena idea tener 50 archivos sueltos. La organización es clave. Esta es la estructura recomendada:</p>
-                    <!-- 
-                     * Usamos <pre> para mantener el formato del texto
-                     * y <code> para indicar que es código/texto de terminal.
-                     * Usamos &lt; y &gt; para mostrar los caracteres < >
-                    -->
-                    <pre class="code-block language-text"><code>mi-proyecto-web/
-│
-├── index.html          &lt;-- Tu página principal
-│
-├── styles/             &lt;-- Carpeta para tu CSS
-│   └── style.css
-│
-├── images/             &lt;-- Carpeta para tus imágenes
-│   └── hero.jpg
-│
-└── scripts/            &lt;-- Carpeta para tu JavaScript
-    └── main.js
-</code></pre>
-                    <p class="mb-4">Para que esto funcione, tendrías que actualizar el enlace en tu <code>&lt;head&gt;</code> a:</p>
-                    <pre class="code-block language-html"><code>&lt;link rel="stylesheet" href="styles/style.css"&gt;</code></pre>
-                </article>
-                
-                <!-- Artículo 5.2: Deploy Gratis -->
-                <article>
-                    <h3 class="article-title">5.2 Cómo hacer "Deploy" GRATIS (¡Sin Git!)</h3>
-                    <p class="mb-4">"Deploy" es la palabra elegante para "publicar tu sitio web". Hay servicios fantásticos que te dejan hacerlo solo arrastrando tu carpeta.</p>
-                    
-                    <h4 class="font-montserrat font-semibold text-accent-green-light mb-2">Opción A: Netlify Drop (La más fácil)</h4>
-                    <ul class="list-disc list-inside mb-4 space-y-1">
-                        <li><strong>Prepara tu carpeta:</strong> Ten tu carpeta (ej. `mi-proyecto-web/`) lista con `index.html` y `styles/style.css` adentro.</li>
-                        <li><strong>Ve a la web:</strong> Abre <a href="https://app.netlify.com/drop" target="_blank" class="text-link hover:underline">app.netlify.com/drop</a>.</li>
-                        <li><strong>Arrastra y Suelta:</strong> Arrastra tu carpeta `mi-proyecto-web` y suéltala en la página.</li>
-                        <li><strong>¡Publicado!</strong> En segundos, te darán una URL (ej. `nombre-raro.netlify.app`) para compartir.</li>
-                    </ul>
+                <ul class="list-disc list-inside space-y-2">
+                    <li><strong class="text-text-bold">SVG (Vectores):</strong> Es código. No pesa nada, nunca se pixela
+                        y puedes cambiar sus colores con CSS.</li>
+                    <li><strong class="text-text-bold">JPG/PNG (Bitmap):</strong> Son fotos (píxeles). Pesan más, se
+                        pixelan si los agrandas y no puedes cambiar sus colores fácilmente. Úsalos solo para fotos de
+                        personas o paisajes.</li>
+                </ul>
 
-                    <h4 class="font-montserrat font-semibold text-accent-green-light mb-2 mt-6">Opción B: GitHub Pages (Con la interfaz web)</h4>
-                    <ul class="list-disc list-inside mb-4 space-y-1">
-                        <li><strong>Crea un Repositorio:</strong> En GitHub.com, crea un repositorio nuevo.</li>
-                        <li><strong>Sube archivos:</strong> Dentro del repo, haz clic en `Add file` > `Upload files`. Arrastra tu `index.html` y tu carpeta `styles`.</li>
-                        <li><strong>Activa Pages:</strong> Ve a `Settings` > `Pages`. Selecciona la rama `main` (o `master`) y haz clic en `Save`.</li>
-                        <li><strong>¡Publicado!</strong> Tendrás una URL como `tu-usuario.github.io/tu-repo`. (Tarda 1-2 min).</li>
-                    </ul>
-                </article>
+                <h3 class="subsection-title mt-6">Cómo poner una Imagen (JPG/PNG)</h3>
+                <p>
+                    Apuntamos a la imagen que tienes en tu carpeta <code>images/images.jpg</code>.
+                </p>
+
+                <h4 class="demo-title">Demo de Imagen (desde carpeta /images):</h4>
+                <div class="demo-box" style="padding: 1rem;">
+                    <img src="images/images.jpg" alt="Una imagen de código de desarrollo web." class="responsive-image">
+                </div>
+
+                <pre class="code-block"><code>&lt;!-- El 'alt' (texto alternativo) es OBLIGATORIO por accesibilidad --&gt;
+&lt;img 
+  src="images/images.jpg" 
+  alt="Una imagen de código de desarrollo web."
+  class="responsive-image"
+&gt;
+
+&lt;!-- En CSS, 'responsive-image' tendría: --&gt;
+.responsive-image {
+  max-width: 100%; /* Asegura que no se salga de la pantalla */
+  height: auto;    /* Mantiene la proporción */
+  border-radius: 8px; /* ¡Esquinas redondeadas! */
+}</code></pre>
+
+                <h3 class="subsection-title mt-6">Cómo poner un Video de YouTube (Responsivo)</h3>
+                <p>No puedes solo poner un link. Debes "embeberlo" (incorporarlo) con un iframe.</p>
+
+
+                <div class="demo-box">
+                    <h4 class="demo-title">Demo: ¿Qué es Desarrollo Web? (EDteam)</h4>
+
+                    <div class="video-container">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/M93eOMiVtiw?si=WbL4ExlSfXWGj_TF"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
             </section>
-            <!-- FIN: TEMA 5 -->
-            
-        </main>
-        <!-- FIN: CONTENIDO PRINCIPAL -->
 
-        <!-- 
-         * INICIO: PIE DE PÁGINA (<footer>)
-         * Etiqueta SEMÁNTICA para el final de la página.
-         * Ideal para copyright, enlaces secundarios, redes sociales.
-        -->
-        <footer class="site-footer">
-            <p>Página de ejemplo creada para enseñar diseño web y buenas prácticas.</p>
-            <p>Hecho con <span class="text-accent-purple-light">❤</span> por la comunidad de código.</p>
+            <section class="content-section">
+                <h2 class="section-title text-accent-green-light">Tema 5: Siguientes Pasos (Estructura y "Deploy")</h2>
+
+                <h3 class="subsection-title">1. Estructura de Carpetas Estándar</h3>
+                <p>
+                    ¡Ya lo estás haciendo! Poner tu CSS en `styles/` es el primer paso.
+                </p>
+                <pre class="code-block"><code>/mi-proyecto-web/
+  ├── index.html         (Tu página principal)
+  ├── /styles/
+  │   └── style.css      (Tu CSS va aquí adentro)
+  ├── /images/
+  │   └── images.jpg     (Tus imágenes van aquí)
+  └── /scripts/
+      └── main.js        (Tu JavaScript iría aquí)
+</code></pre>
+                <p>Recuerda que el link en tu <code>&lt;head&gt;</code> debe ser:</p>
+                <pre class="code-block"><code>&lt;link rel="stylesheet" href="styles/style.css"&gt;</code></pre>
+
+                <h3 class="subsection-title mt-6">2. Publicar tu Página GRATIS (Deploy)</h3>
+                <p>
+                    "Deploy" es simplemente subir tus archivos a un servidor para que cualquiera pueda verlos con un
+                    link.
+                </p>
+
+                <div class="tip-box">
+                    <p><strong class="text-text-bold">La Opción Más Fácil: Netlify Drop</strong></p>
+                    <ol class="list-decimal list-inside mt-2 space-y-2">
+                        <li>Crea una carpeta en tu PC (ej. "mi-web").</li>
+                        <li>Pon tu `index.html`, y tus carpetas `styles` e `images` dentro.</li>
+                        <li>Ve a <a href="https://app.netlify.com/drop" target="_blank"
+                                class="text-link">app.netlify.com/drop</a> (necesitas cuenta gratis).</li>
+                        <li><strong>Arrastra tu carpeta "mi-web"</strong> y suéltala en la caja punteada de la página.
+                        </li>
+                        <li>¡Listo! Netlify te dará un link público (ej. `mi-pagina-genial.netlify.app`) en menos de 10
+                            segundos.</li>
+                    </ol>
+                </div>
+
+                <div class="rule-box mt-4">
+                    <p><strong class="text-text-bold">La Opción Estándar (con GitHub): GitHub Pages</strong></p>
+                    <p>Cuando aprendan Git, este es el camino:</p>
+                    <ol class="list-decimal list-inside mt-2 space-y-2">
+                        <li>Sube tu proyecto a un repositorio de GitHub.</li>
+                        <li>Ve a la pestaña "Settings" (Configuración) de tu repositorio.</li>
+                        <li>Baja a la sección "Pages" (Páginas).</li>
+                        <li>Elige la rama (branch) "main" (o "master") y haz clic en "Save".</li>
+                        <li>GitHub te dará un link (ej. `tu-usuario.github.io/tu-repositorio`). Tarda 1-2 minutos en
+                            activarse.</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title text-accent-blue-light">Recursos para Aprender Más</h2>
+                <p>
+                    ¡Felicidades por completar esta guía! El aprendizaje nunca termina. Estos son los mejores sitios
+                    para consultar la documentación oficial y aprender cada etiqueta de HTML y cada propiedad de CSS.
+                </p>
+                <ul class="list-disc list-inside space-y-2 mt-6">
+                    <li class="mt-4">
+                        <strong class="text-text-bold">MDN Web Docs (Mozilla)</strong>
+                        <p class="text-sm text-text-secondary mt-1 mb-2">
+                            La referencia más completa y profesional. Es la "biblia" del desarrollo web.
+                        </p>
+                        <a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank"
+                            class="text-link">Documentación de HTML</a> |
+                        <a href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank"
+                            class="text-link">Documentación de CSS</a>
+                    </li>
+
+                    <li class="mt-6">
+                        <strong class="text-text-bold">W3Schools</strong>
+                        <p class="text-sm text-text-secondary mt-1 mb-2">
+                            Excelente para principiantes, con muchos ejemplos interactivos para "probar tú mismo".
+                        </p>
+                        <a href="https://www.w3schools.com/html/" target="_blank" class="text-link">Tutorial de HTML</a>
+                        |
+                        <a href="https://www.w3schools.com/css/" target="_blank" class="text-link">Tutorial de CSS</a>
+                    </li>
+                </ul>
+            </section>
+
+        </main> <footer class="main-footer">
+            <p>Creado con HTML5, CSS3 y JavaScript.</p>
+            <p>Un proyecto de ejemplo para enseñar desarrollo web moderno.</p>
         </footer>
-        <!-- FIN: PIE DE PÁGINA -->
 
-    </div>
-    <!-- FIN: CONTENEDOR PRINCIPAL -->
+    </div> <script>
+        // 'DOMContentLoaded' es un evento que espera a que todo el HTML
+        // esté cargado y listo (parseado) antes de ejecutar el script.
+        // Es una buena práctica para asegurar que todos los elementos (ej. botones) existen.
+        document.addEventListener('DOMContentLoaded', () => {
 
-    <!-- 
-     * INICIO: SCRIPT DE JAVASCRIPT
-     * Este pequeño script controla el botón de Modo Claro/Oscuro.
-     * Se suele poner al final del <body> para que la página
-     * cargue primero su contenido y luego la interactividad.
-    -->
-    <script>
-        // Imprimir un mensaje en la consola del navegador (Presiona F12 para ver)
-        // ¡Comentar tu código es importante también en JavaScript!
-        console.log("¡Script de cambio de tema cargado!");
+            // 1. "Cachear" (guardar) en variables los elementos del DOM que vamos a usar.
+            //    (Es más eficiente que buscarlos cada vez).
+            const themeToggle = document.getElementById('theme-toggle');
+            const moonIcon = document.getElementById('moon-icon');
+            const sunIcon = document.getElementById('sun-icon');
+            const htmlEl = document.documentElement; // La etiqueta <html>
 
-        // 1. Encontrar el botón en el HTML por su 'id'
-        const themeToggleButton = document.getElementById('theme-toggle');
-        
-        // 2. Encontrar los dos iconos (luna y sol)
-        const moonIcon = document.getElementById('moon-icon');
-        const sunIcon = document.getElementById('sun-icon');
-
-        // 3. Función para cambiar los iconos
-        function toggleIcons() {
-            // Revisa si <html> tiene la clase 'dark'
-            if (document.documentElement.classList.contains('dark')) {
-                // Si está oscuro, mostrar la luna y ocultar el sol
-                moonIcon.classList.remove('hidden');
-                sunIcon.classList.add('hidden');
-            } else {
-                // Si está claro, ocultar la luna y mostrar el sol
-                moonIcon.classList.add('hidden');
-                sunIcon.classList.remove('hidden');
+            // 2. Esta función revisa el estado actual (si <html> tiene la clase 'dark')
+            //    y sincroniza los iconos para que muestren el icono correcto.
+            function toggleIcons() {
+                if (htmlEl.classList.contains('dark')) {
+                    // MODO OSCURO: Muestra la luna, oculta el sol.
+                    moonIcon.classList.remove('hidden');
+                    sunIcon.classList.add('hidden');
+                } else {
+                    // MODO CLARO: Muestra el sol, oculta la luna.
+                    moonIcon.classList.add('hidden');
+                    sunIcon.classList.remove('hidden');
+                }
             }
-        }
 
-        // 4. Añadir un "detector de clics" (event listener) al botón
-        themeToggleButton.addEventListener('click', function() {
-            // Cuando se hace clic:
-            // a. Alterna (pone o saca) la clase 'dark' en <html>
-            document.documentElement.classList.toggle('dark');
-            
-            // b. Alterna la clase 'light' (la pone si 'dark' no está)
-            document.documentElement.classList.toggle('light', !document.documentElement.classList.contains('dark'));
+            // 3. Agregamos un "oyente de eventos" (Event Listener) al botón.
+            //    'click' es el evento que escuchamos.
+            themeToggle.addEventListener('click', () => {
+                // 4. 'toggle' es una función mágica:
+                //    - Si la clase 'dark' existe, la quita.
+                //    - Si la clase 'dark' NO existe, la añade.
+                htmlEl.classList.toggle('dark');
 
-            // c. Llama a la función para actualizar los iconos
+                // 5. Llamamos a la función para actualizar los iconos
+                //    inmediatamente después de cambiar el tema.
+                toggleIcons();
+
+                // TODO (Opcional): Guardar la preferencia del usuario
+                // en localStorage para que recuerde el tema en futuras visitas.
+            });
+
+            // 6. Llamada inicial al cargar la página:
+            //    Asegura que los iconos se muestren correctamente
+            //    según el estado inicial (que es 'dark' en nuestro <html>).
             toggleIcons();
         });
-
-        // 5. Comprobación inicial al cargar la página
-        // Asegurarse de que el icono correcto se muestre
-        if (!document.documentElement.classList.contains('dark')) {
-            document.documentElement.classList.add('light');
-        }
-        toggleIcons(); // Llama a la función una vez al inicio
     </script>
-    <!-- FIN: SCRIPT DE JAVASCRIPT -->
 
 </body>
+
 </html>
