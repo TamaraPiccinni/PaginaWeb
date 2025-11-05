@@ -84,7 +84,7 @@ Tienes dos formas de ver este proyecto:
 
 Puedes ver el sitio en vivo en la siguiente URL:
 
-**\[(https://guia-pagina-web.netlify.app/)\]**
+https://guia-pagina-web.netlify.app/
 
 
 
