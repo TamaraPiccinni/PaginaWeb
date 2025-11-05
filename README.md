@@ -84,9 +84,9 @@ Tienes dos formas de ver este proyecto:
 
 Puedes ver el sitio en vivo en la siguiente URL:
 
-**\[ENLACE A TU DEPLOY AQUÍ\]**
+**\[(https://guia-pagina-web.netlify.app/)\]**
 
-*(Reemplaza esto con el enlace de Netlify o GitHub Pages que creaste siguiendo el Tema 5)*
+
 
 ### 2. Ejecutarlo Localmente
 
