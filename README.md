@@ -3,17 +3,11 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Estado](https://img.shields.io/badge/Estado-Completo-success?style=for-the-badge)
 
-# Proyecto: Página Web "Mejor y Más Linda"
+# Proyecto: Página Web 
 
 Este es un proyecto educativo diseñado para enseñar prácticas modernas de desarrollo web (HTML5 y CSS3).
 
-El objetivo es mostrar la evolución desde los estilos en línea (`<p style=...`) y las malas prácticas que se enseñaban antiguamente, hacia un enfoque limpio, semántico, responsivo y fácil de mantener.
-
-## Vista Previa
-
-¡Así es como se ve el proyecto!
-
-*(**Recomendación:** ¡Toma una captura de pantalla de tu página terminada y reemplaza el enlace de arriba! Un truco fácil en GitHub es arrastrar tu imagen a la pestaña "Issues" o a este mismo editor de README para obtener una URL y pegarla aquí.)*
+El objetivo es mostrar la evolución desde los estilos en línea (`<p style=...`) y las malas prácticas que se enseñaban antiguamente, hacia un enfoque limpio, semántico, responsivo y fácil de mantener
 
 ## Temas Cubiertos
 
