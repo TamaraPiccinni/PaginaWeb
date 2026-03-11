@@ -1,400 +1,212 @@
 <!DOCTYPE html>
 <html lang="es" class="dark">
-
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Página Web Moderna - De 0 a Profesional</title>
-
+    <title>Portafolio Tecnico - 5to Ano</title>
     <link rel="stylesheet" href="styles/style.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body class="bg-primary text-text font-inter antialiased transition-colors duration-300">
 
     <button id="theme-toggle" class="theme-toggle-button" aria-label="Cambiar tema">
-        <svg id="moon-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-        </svg>
-        <svg id="sun-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M12 3v1m0 16v1m9-9h1M2 12h1m15.364 6.364l-.707.707M6.343 6.343l-.707-.707m12.728 0l-.707-.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
-            </path>
-        </svg>
+        <svg id="moon-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+        <svg id="sun-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h1M2 12h1m15.364 6.364l-.707.707M6.343 6.343l-.707-.707m12.728 0l-.707-.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
     </button>
 
     <div class="container">
-
-        <header class="main-header">
-
-            <div class="hero-svg-container">
-                <svg viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg">
-                    <rect class="svg-rect-bg" x="10" y="10" width="380" height="130" rx="15" />
-                    <path class="svg-accent-green" d="M 60 40 L 100 110 L 140 40 Z" />
-                    <circle class="svg-accent-blue" cx="200" cy="75" r="40" />
-                    <rect class="svg-accent-purple" x="270" y="35" width="80" height="80" rx="10" />
-                    <text x="200" y="82" class="svg-text-title" text-anchor="middle" font-size="24"
-                        font-weight="bold">SVG</text>
-                    <text x="100" y="80" class="svg-text-label" text-anchor="middle" font-size="14">Ligero</text>
-                    <text x="310" y="80" class="svg-text-label" text-anchor="middle" font-size="14">Escalable</text>
-                </svg>
-            </div>
-
-            <h1 class="main-title">
-                Cómo hacer una Página Web "Mejor" y "Más Linda"
-            </h1>
-            <p class="subtitle">
-                Una guía paso a paso para dejar atrás las malas prácticas y construir sitios web modernos y
-                profesionales.
-            </p>
-        </header>
+        
+        <nav class="tabs-nav">
+            <button class="tab-btn active" data-target="inicio">Inicio</button>
+            <button class="tab-btn" data-target="ficha">Ficha Tecnica</button>
+            <button class="tab-btn" data-target="guia">Guia Web Completa</button>
+        </nav>
 
         <main class="content-wrapper">
 
-            <section class="content-section">
-                <h2 class="section-title text-accent-green-light">Tema 1: La Estructura Invisible (HTML Semántico)</h2>
-                <p>
-                    "Mejor" significa que la página es robusta, fácil de mantener y accesible. Esto se logra antes de
-                    pensar en los colores.
-                    Ya no usamos <code>&lt;div&gt;</code> para todo.
-                </p>
-
-                <div class="code-comparison">
-                    <div class="code-example-bad">
-                        <span class="code-label">Mal (Antiguo):</span>
-                        <code class="block">&lt;div id="header"&gt;...&lt;/div&gt;</code>
-                        <code class="block">&lt;div id="content"&gt;...&lt;/div&gt;</code>
-                        <code class="block">&lt;div id="footer"&gt;...&lt;/div&gt;</code>
+            <section id="inicio" class="tab-content active">
+                <header class="main-header">
+                    <div class="hero-svg-container">
+                        <svg viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg">
+                            <rect class="svg-rect-bg" x="10" y="10" width="380" height="130" rx="15" />
+                            <path class="svg-accent-green" d="M 60 40 L 100 110 L 140 40 Z" />
+                            <circle class="svg-accent-blue" cx="200" cy="75" r="40" />
+                            <rect class="svg-accent-purple" x="270" y="35" width="80" height="80" rx="10" />
+                            <text x="200" y="82" class="svg-text-title" text-anchor="middle" font-size="24" font-weight="bold">SVG</text>
+                            <text x="100" y="80" class="svg-text-label" text-anchor="middle" font-size="14">Ligero</text>
+                            <text x="310" y="80" class="svg-text-label" text-anchor="middle" font-size="14">Escalable</text>
+                        </svg>
                     </div>
-                    <div class="code-example-good">
-                        <span class="code-label">Bien (Moderno):</span>
-                        <code class="block">&lt;header&gt;...&lt;/header&gt;</code>
-                        <code class="block">&lt;main&gt;...&lt;/main&gt;</code>
-                        <code class="block">&lt;footer&gt;...&lt;/footer&gt;</code>
+                    <h1 class="main-title">Portafolio Tecnico 2026</h1>
+                    <p class="subtitle">Bitacora de diagnosticos de hardware y proyectos IoT.</p>
+                </header>
+            </section>
+
+            <section id="ficha" class="tab-content">
+                <div class="content-section text-center">
+                    <h2 class="section-title text-accent-blue-light">Operacion Despiece</h2>
+                    <p>Componentes rescatados del equipo de laboratorio.</p>
+                    
+                    <div class="carousel-container">
+                        <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+                        
+                        <div class="carousel-slides">
+                            <div class="slide active-slide">
+                                <h3 class="text-accent-green-light">Placa Madre</h3>
+                                <div class="demo-box flex-center">
+                                    <p><strong>Modelo:</strong> ASUS PRIME H510M-E</p>
+                                    <p><strong>Socket:</strong> LGA 1200</p>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <h3 class="text-accent-purple-light">Microprocesador</h3>
+                                <div class="demo-box flex-center">
+                                    <p><strong>Modelo:</strong> Intel Core i3</p>
+                                    <p><strong>Estado:</strong> Requiere cambio de pasta termica.</p>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <h3 class="text-accent-blue-light">Memoria RAM</h3>
+                                <div class="demo-box flex-center">
+                                    <p><strong>Tipo:</strong> DDR4</p>
+                                    <p><strong>Capacidad:</strong> 8 GB</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
                     </div>
                 </div>
-                <p class="mt-4">
-                    <strong>¿Por qué?</strong> Le das un "mapa" a Google (mejora el SEO) y a los lectores de pantalla
-                    (mejora la accesibilidad).
-                </p>
             </section>
 
-            <section class="content-section">
-                <h2 class="section-title text-accent-blue-light">Tema 2: Diseño Responsivo (¡Se ve bien en celulares!)
-                </h2>
-                <p>
-                    Hoy, la mayoría de usuarios navega en el celular. Si tu página se "rompe" en un celular, no está
-                    bien hecha.
-                </p>
-                <p>Agrega <strong>siempre</strong> esta línea en tu <code>&lt;head&gt;</code>:</p>
-                <pre
-                    class="code-block"><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+            <section id="guia" class="tab-content">
+                <div class="content-wrapper">
+                    
+                    <section class="content-section">
+                        <h2 class="section-title text-accent-green-light">Tema 1: La Estructura Invisible (HTML Semantico)</h2>
+                        <p>Una pagina profesional es robusta, facil de mantener y accesible. Esto se logra usando las etiquetas correctas de HTML5. Ya no usamos <code>&lt;div&gt;</code> para todo.</p>
+                        <div class="code-comparison">
+                            <div class="code-example-bad">
+                                <span class="code-label">Mal (Antiguo):</span>
+                                <code class="block">&lt;div id="header"&gt;...&lt;/div&gt;</code>
+                                <code class="block">&lt;div id="content"&gt;...&lt;/div&gt;</code>
+                                <code class="block">&lt;div id="footer"&gt;...&lt;/div&gt;</code>
+                            </div>
+                            <div class="code-example-good">
+                                <span class="code-label">Bien (Moderno):</span>
+                                <code class="block">&lt;header&gt;...&lt;/header&gt;</code>
+                                <code class="block">&lt;main&gt;...&lt;/main&gt;</code>
+                                <code class="block">&lt;footer&gt;...&lt;/footer&gt;</code>
+                            </div>
+                        </div>
+                        <p class="mt-4"><strong>Por que?</strong> Le das un mapa a los motores de busqueda (mejora el SEO) y a los lectores de pantalla (mejora la accesibilidad).</p>
+                    </section>
 
-                <p>Luego, en tu CSS, usas "Media Queries" para cambiar estilos según el tamaño de la pantalla:</p>
-                <pre class="code-block"><code>/* Estilos para PC (ej. 800px de ancho) */
-.contenedor {
-  width: 800px;
-}
-
-/* Cuando la pantalla sea de 600px o menos (celulares) */
-@media (max-width: 600px) {
-  .contenedor {
-    width: 100%; /* Ocupa toda la pantalla */
-  }
-}</code></pre>
-            </section>
-
-            <section class="content-section">
-                <h2 class="section-title text-accent-purple-light">Tema 3: ¡Alinear con Flexbox! (El truco MÁGICO)</h2>
-                <p>
-                    ¿Cansado de que las cosas no queden donde quieres? Flexbox es la herramienta moderna.
-                    ¿Quieres centrar algo perfectamente?
-                </p>
-                <pre class="code-block"><code>.contenedor-padre {
+                    <section class="content-section">
+                        <h2 class="section-title text-accent-blue-light">Tema 2: Diseno Responsivo y Flexbox</h2>
+                        <p>La mayoria de los usuarios navega desde el celular. Para que los elementos se adapten y se alineen correctamente, usamos Flexbox.</p>
+                        <pre class="code-block"><code>.contenedor-padre {
   display: flex;
   justify-content: center; /* Centra horizontalmente */
   align-items: center;     /* Centra verticalmente */
-  min-height: 200px;       /* (Le damos algo de altura) */
+  flex-wrap: wrap;         /* Permite que los elementos bajen si no hay espacio */
 }</code></pre>
+                        <h4 class="demo-title">Demo de Flexbox:</h4>
+                        <div class="demo-box flex-center">
+                            <div class="demo-item-flex">Centrado con Flexbox</div>
+                        </div>
+                    </section>
 
-                <h4 class="demo-title">Demo de Flexbox:</h4>
-                <div class="demo-box flex-center">
-                    <div class="demo-item-flex">
-                        ¡Centrado!
-                    </div>
-                </div>
-            </section>
+                    <section class="content-section">
+                        <h2 class="section-title text-accent-purple-light">Tema 3: CSS Grid (Layouts Profesionales)</h2>
+                        <p>Mientras Flexbox es ideal para alinear elementos en una sola fila o columna, <strong>CSS Grid</strong> es la herramienta definitiva para crear grillas y galerias en dos dimensiones (filas y columnas al mismo tiempo).</p>
+                        <pre class="code-block"><code>.galeria {
+  display: grid;
+  /* Crea 2 columnas del mismo tamano */
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 15px; /* Espacio entre las cajas */
+}</code></pre>
+                        <h4 class="demo-title">Demo de CSS Grid:</h4>
+                        <div class="demo-box grid-demo">
+                            <div class="demo-item-grid">Proyecto 1</div>
+                            <div class="demo-item-grid">Proyecto 2</div>
+                            <div class="demo-item-grid">Proyecto 3</div>
+                            <div class="demo-item-grid">Proyecto 4</div>
+                        </div>
+                    </section>
 
-            <section class="content-section">
-                <h2 class="section-title text-accent-green-light">Tema 4: Estética "Linda" y CSS Moderno</h2>
-                <p>
-                    El secreto N°1 es: <strong>Menos es Más</strong>. No uses 10 colores. Define una paleta.
-                    Usamos <strong>Variables CSS</strong> (Custom Properties) para definir nuestros colores en un solo
-                    lugar.
-                </p>
-                <pre class="code-block"><code>/* Define los colores en :root (la raíz del documento) */
-:root {
+                    <section class="content-section">
+                        <h2 class="section-title text-accent-green-light">Tema 4: Estetica y CSS Moderno</h2>
+                        <p>El secreto de un diseno limpio es definir una paleta de colores usando <strong>Variables CSS</strong> en la raiz del documento.</p>
+                        <pre class="code-block"><code>:root {
   --color-texto: #333;
   --color-fondo: #FFF;
   --color-acento: #007bff;
 }
-
-/* Luego, úsalos donde quieras */
 body {
   color: var(--color-texto);
   background-color: var(--color-fondo);
-}
-button {
-  background-color: var(--color-acento);
 }</code></pre>
-                <p>
-                    ¡Así es como funciona el botón de modo claro/oscuro! Simplemente cambia los valores de estas
-                    variables.
-                </p>
-            </section>
+                        <p>Efectos como <code>:hover</code> y <code>box-shadow</code> le dan profundidad e interactividad a la interfaz.</p>
+                        <div class="demo-box flex-center">
+                            <div class="demo-card-shadow">
+                                <button class="demo-button">Pasa el mouse sobre mi</button>
+                            </div>
+                        </div>
+                    </section>
 
-            <section class="content-section">
-                <h2 class="section-title text-accent-blue-light">Bono Extra 1: La "Magia" de CSS</h2>
-                <p>Estos efectos son fáciles y hacen que tu página se sienta profesional al instante.</p>
+                    <section class="content-section">
+                        <h2 class="section-title text-accent-blue-light">Tema 5: Interaccion con JavaScript (El DOM)</h2>
+                        <p>JavaScript es el cerebro de la pagina. Nos permite leer interacciones del usuario (como clics) y modificar el HTML y CSS en tiempo real manipulando el <strong>DOM (Document Object Model)</strong>.</p>
+                        <pre class="code-block"><code>// 1. Seleccionamos un boton del HTML por su ID
+const boton = document.getElementById('miBoton');
 
-                <h3 class="subsection-title">1. Efecto :hover (Reacción al mouse)</h3>
-                <p>El usuario debe saber que puede hacer clic. El <code>transition</code> hace que el cambio sea suave.
-                </p>
-                <pre class="code-block"><code>.boton {
-  background-color: var(--color-accent-blue-dark);
-  /* 'transition' anima el cambio de propiedades (ej. color) */
-  transition: all 0.3s ease;
-}
+// 2. Le agregamos un "escuchador de eventos"
+boton.addEventListener('click', function() {
+  // 3. Modificamos el estilo o las clases
+  document.body.classList.toggle('dark-mode');
+});</code></pre>
+                        <p>Asi es exactamente como funciona el boton del Modo Oscuro y el Carrusel de esta misma aplicacion web.</p>
+                    </section>
 
-/* ':hover' se activa cuando el mouse está encima */
-.boton:hover {
-  background-color: var(--color-accent-blue-light);
-  transform: translateY(-2px); /* Moverlo 2px hacia arriba */
-}</code></pre>
+                    <section class="content-section">
+                        <h2 class="section-title text-accent-purple-light">Tema 6: Flujo Profesional (Git y Deploy)</h2>
+                        
+                        <h3 class="subsection-title">Control de Versiones con Git</h3>
+                        <p>Los programadores no guardan archivos como "proyecto_final_3.zip". Usamos Git para llevar un historial de cambios. El flujo de trabajo basico en la terminal es:</p>
+                        <div class="terminal-box">
+                            <code>&gt; git add .</code>
+                            <code>&gt; git commit -m "Agregada la seccion de Hardware"</code>
+                            <code>&gt; git push origin main</code>
+                        </div>
 
-                <h3 class="subsection-title mt-4">2. Sombras (box-shadow)</h3>
-                <p>Da una sensación de "profundidad", como si los elementos flotaran.</p>
-                <pre class="code-block"><code>.tarjeta {
-  /* Sombra: (desplaz. X, desplaz. Y, difuminado, color) */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
-}</code></pre>
+                        <h3 class="subsection-title mt-6">Despliegue (Deploy)</h3>
+                        <div class="rule-box mt-4">
+                            <p><strong class="text-text-bold">GitHub Pages (Estandar de la Industria)</strong></p>
+                            <ol class="list-decimal list-inside mt-2 space-y-2">
+                                <li>Sube tu proyecto a un repositorio publico de GitHub mediante la terminal o VS Code.</li>
+                                <li>Ve a la pestana "Settings" del repositorio en GitHub.</li>
+                                <li>En el menu lateral, selecciona "Pages".</li>
+                                <li>En "Source", elige la rama "main" y haz clic en Save. En unos minutos tu web estara online.</li>
+                            </ol>
+                        </div>
+                    </section>
 
-                <h4 class="demo-title">Demo de :hover y box-shadow:</h4>
-                <div class="demo-box flex-center">
-                    <div class="demo-card-shadow">
-                        <button class="demo-button">
-                            Pasa el mouse sobre mí
-                        </button>
-                    </div>
                 </div>
             </section>
 
-            <section class="content-section">
-                <h2 class="section-title text-accent-purple-light">Bono Extra 2: Imágenes (SVG vs JPG) y Videos</h2>
-
-                <h3 class="subsection-title">SVG (Gráfico Vectorial) vs JPG/PNG</h3>
-                <p>
-                    Para logos, iconos y gráficos simples (como el de arriba), **SVG es casi siempre mejor**.
-                </p>
-                <ul class="list-disc list-inside space-y-2">
-                    <li><strong class="text-text-bold">SVG (Vectores):</strong> Es código. No pesa nada, nunca se pixela
-                        y puedes cambiar sus colores con CSS.</li>
-                    <li><strong class="text-text-bold">JPG/PNG (Bitmap):</strong> Son fotos (píxeles). Pesan más, se
-                        pixelan si los agrandas y no puedes cambiar sus colores fácilmente. Úsalos solo para fotos de
-                        personas o paisajes.</li>
-                </ul>
-
-                <h3 class="subsection-title mt-6">Cómo poner una Imagen (JPG/PNG)</h3>
-                <p>
-                    Apuntamos a la imagen que tienes en tu carpeta <code>images/images.jpg</code>.
-                </p>
-
-                <h4 class="demo-title">Demo de Imagen (desde carpeta /images):</h4>
-                <div class="demo-box" style="padding: 1rem;">
-                    <img src="images/images.jpg" alt="Una imagen de código de desarrollo web."
-                        class="responsive-image">
-                </div>
-
-                <pre class="code-block"><code>&lt;!-- El 'alt' (texto alternativo) es OBLIGATORIO por accesibilidad --&gt;
-&lt;img 
-  src="images/images.jpg" 
-  alt="Una imagen de código de desarrollo web."
-  class="responsive-image"
-&gt;
-
-&lt;!-- En CSS, 'responsive-image' tendría: --&gt;
-.responsive-image {
-  max-width: 100%; /* Asegura que no se salga de la pantalla */
-  height: auto;    /* Mantiene la proporción */
-  border-radius: 8px; /* ¡Esquinas redondeadas! */
-  
-  /* --- AÑADE ESTO PARA CENTRAR --- */
-  display: block;
-  margin: 0 auto;
-}</code></pre>
-
-                <h3 class="subsection-title mt-6">Cómo poner un Video de YouTube (Responsivo)</h3>
-                <p>No puedes solo poner un link. Debes "embeberlo" (incorporarlo) con un iframe.</p>
-
-
-                <div class="demo-box">
-                    <h4 class="demo-title">Demo: ¿Qué es Desarrollo Web? (EDteam)</h4>
-
-                    <div class="video-container">
-                        <iframe width="560" height="315"
-                            src="https://www.youtube.com/embed/M93eOMiVtiw?si=WbL4ExlSfXWGj_TF"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                        </iframe>
-                    </div>
-                </div>
-            </section>
-
-            <section class="content-section">
-                <h2 class="section-title text-accent-green-light">Tema 5: Siguientes Pasos (Estructura y "Deploy")</h2>
-
-                <h3 class="subsection-title">1. Estructura de Carpetas Estándar</h3>
-                <p>
-                    ¡Ya lo estás haciendo! Poner tu CSS en `styles/` es el primer paso.
-                </p>
-                <pre class="code-block"><code>/mi-proyecto-web/
-  ├── index.html         (Tu página principal)
-  ├── /styles/
-  │   └── style.css      (Tu CSS va aquí adentro)
-  ├── /images/
-  │   └── images.jpg     (Tus imágenes van aquí)
-  └── /scripts/
-      └── main.js        (Tu JavaScript iría aquí)
-</code></pre>
-                <p>Recuerda que el link en tu <code>&lt;head&gt;</code> debe ser:</p>
-                <pre class="code-block"><code>&lt;link rel="stylesheet" href="styles/style.css"&gt;</code></pre>
-
-                <h3 class="subsection-title mt-6">2. Publicar tu Página GRATIS (Deploy)</h3>
-                <p>
-                    "Deploy" es simplemente subir tus archivos a un servidor para que cualquiera pueda verlos con un
-                    link.
-                </p>
-
-                <div class="tip-box">
-                    <p><strong class="text-text-bold">La Opción Más Fácil: Netlify Drop</strong></p>
-                    <ol class="list-decimal list-inside mt-2 space-y-2">
-                        <li>Crea una carpeta en tu PC (ej. "mi-web").</li>
-                        <li>Pon tu `index.html`, y tus carpetas `styles` e `images` dentro.</li>
-                        <li>Ve a <a href="https://app.netlify.com/drop" target="_blank"
-                                class="text-link">app.netlify.com/drop</a> (necesitas cuenta gratis).</li>
-                        <li><strong>Arrastra tu carpeta "mi-web"</strong> y suéltala en la caja punteada de la página.
-                        </li>
-                        <li>¡Listo! Netlify te dará un link público.</li>
-                    </ol>
-                </div>
-
-                <div class="rule-box mt-4">
-                    <p><strong class="text-text-bold">La Opción Estándar (con GitHub): GitHub Pages</strong></p>
-                    <ol class="list-decimal list-inside mt-2 space-y-2">
-                        <li>Sube tu proyecto a un repositorio de GitHub.</li>
-                        <li>Ve a la pestaña "Settings" (Configuración) de tu repositorio.</li>
-                        <li>Baja a la sección "Pages" (Páginas).</li>
-                        <li>Elige la rama (branch) "main" y haz clic en "Save".</li>
-                        <li>GitHub te dará un link. Tarda 1-2 minutos en activarse.</li>
-                    </ol>
-                </div>
-            </section>
-
-            <section class="content-section">
-                <h2 class="section-title text-accent-blue-light">Recursos para Aprender Más</h2>
-                <p>
-                    ¡Felicidades por completar esta guía! El aprendizaje nunca termina. Estos son los mejores sitios
-                    para consultar la documentación oficial.
-                </p>
-                <ul class="list-disc list-inside space-y-2 mt-6">
-                    <li class="mt-4">
-                        <strong class="text-text-bold">MDN Web Docs (Mozilla)</strong>
-                        <p class="text-sm text-text-secondary mt-1 mb-2">
-                            La referencia más completa y profesional. Es la "biblia" del desarrollo web.
-                        </p>
-                        <a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank"
-                            class="text-link">Documentación de HTML</a> |
-                        <a href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank"
-                            class="text-link">Documentación de CSS</a>
-                    </li>
-
-                    <li class="mt-6">
-                        <strong class="text-text-bold">W3Schools</strong>
-                        <p class="text-sm text-text-secondary mt-1 mb-2">
-                            Excelente para principiantes, con muchos ejemplos interactivos.
-                        </p>
-                        <a href="https://www.w3schools.com/html/" target="_blank" class="text-link">Tutorial de HTML</a>
-                        |
-                        <a href="https://www.w3schools.com/css/" target="_blank" class="text-link">Tutorial de CSS</a>
-                    </li>
-                </ul>
-            </section>
-
-        </main> <footer class="main-footer">
+        </main>
+        
+        <footer class="main-footer">
             <p>Creado con HTML5, CSS3 y JavaScript.</p>
-            <p>Un proyecto de ejemplo para enseñar desarrollo web moderno.</p>
+            <p>Laboratorio de Hardware - 5to Ano</p>
         </footer>
 
-    </div> <script>
-        // 'DOMContentLoaded': Es un "evento" que espera a que todo el HTML
-        // esté cargado y listo (parseado) antes de ejecutar el script.
-        // Es una buena práctica para asegurar que todos los elementos (ej. botones) existen.
-        document.addEventListener('DOMContentLoaded', () => {
+    </div>
 
-            // 1. "Cachear" (guardar) en variables los elementos del DOM que vamos a usar.
-            //    (Es más eficiente que buscarlos cada vez).
-            const themeToggle = document.getElementById('theme-toggle');
-            const moonIcon = document.getElementById('moon-icon');
-            const sunIcon = document.getElementById('sun-icon');
-            const htmlEl = document.documentElement; // La etiqueta <html>
-
-            // 2. Esta función revisa el estado actual (si <html> tiene la clase 'dark')
-            //    y sincroniza los iconos para que muestren el icono correcto.
-            function toggleIcons() {
-                if (htmlEl.classList.contains('dark')) {
-                    // MODO OSCURO: Muestra la luna, oculta el sol.
-                    moonIcon.classList.remove('hidden');
-                    sunIcon.classList.add('hidden');
-                } else {
-                    // MODO CLARO: Muestra el sol, oculta la luna.
-                    moonIcon.classList.add('hidden');
-                    sunIcon.classList.remove('hidden');
-                }
-            }
-
-            // 3. Agregamos un "oyente de eventos" (Event Listener) al botón.
-            //    'click' es el evento que escuchamos.
-            themeToggle.addEventListener('click', () => {
-                // 4. 'toggle' es una función mágica:
-                //    - Si la clase 'dark' existe, la quita.
-                //    - Si la clase 'dark' NO existe, la añade.
-                htmlEl.classList.toggle('dark');
-
-                // 5. Llamamos a la función para actualizar los iconos
-                //    inmediatamente después de cambiar el tema.
-                toggleIcons();
-
-                // TODO (Opcional): Guardar la preferencia del usuario
-                // en localStorage para que recuerde el tema en futuras visitas.
-            });
-
-            // 6. Llamada inicial al cargar la página:
-            //    Asegura que los iconos se muestren correctamente
-            //    según el estado inicial (que es 'dark' en nuestro <html>).
-            toggleIcons();
-        });
-    </script>
-
+    <script src="scripts/main.js"></script>
 </body>
-
 </html>
